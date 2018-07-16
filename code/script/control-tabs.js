@@ -5,7 +5,7 @@ const ControlTabs = {
     state: {},
     target: {},
     selectTab: (tab, shouldUpdateData) => {
-        let currentlySelectedTabElement = ControlTabs.target.querySelector('.control-tabs__item--selected');
+        /*let currentlySelectedTabElement = ControlTabs.target.querySelector('.control-tabs__item--selected');
         let tabElement = ControlTabs.target.querySelector('[reference="'+ tab.id +'"]');
 
         if (currentlySelectedTabElement) {
@@ -21,7 +21,7 @@ const ControlTabs = {
             ControlTabs.state.tabs[tab.id].selected = true;
 
             Events.controlTabClick(ControlTabs.state.tabs);
-        }
+        }*/
     },
     observe: () => {
         let clickableElements = ControlTabs.target.querySelectorAll('[bind-click]');

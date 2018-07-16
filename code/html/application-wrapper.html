@@ -1,19 +1,16 @@
-<div id="application-wrapper" class="application-wrapper">
-    <div class="controls-info-wrapper content-box-shadow flex-wrap full-flex-box">
-        <div class="full-flex-box padding-20 justify-end">
-            <@= log-out =@>
+<div id="application-wrapper" class="flex-full application-wrapper">
+    <div class="application-live-background block-full">
+        <div bind-animation reference="page-slider" class="page-box-link rotation-item">
+            <span>Oykos Product</span>
         </div>
-        <div class="full-flex-box justify-center">
-            <@= upload-image =@>
+        <div bind-animation reference="page-slider" class="page-box-link rotation-item">
+            <span>Software & Code Samples</span>
         </div>
-        <@= info =@>
-        <@= rating-reviews =@>
-        <@= followers =@>
-        <@= control-tabs =@>
+        <div bind-animation reference="page-slider" class="page-box-link rotation-item">
+            <span>About The Master</span>
+        </div>
     </div>
-    <div class="content-edit-wrapper content-box-shadow flex-wrap full-flex-box">
-        <div dynamic-html="switchTabContent">
-            <@= content-tab-about =@>
-        </div>
+    <div class="">
+
     </div>
 </div>

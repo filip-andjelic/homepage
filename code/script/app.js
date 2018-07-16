@@ -20,6 +20,41 @@ function checkForMobileDevice(target) {
         //target.style.width = String(widthOfApp) + 'px';
     }
 }
+function stylePageLinkItem(animationBindElements, current, middle, isSquareNumber) {
+    const offset = (middle - current) - 2 * (middle - current);
+    const target = animationBindElements[current];
+    const itemX = 250;
+
+    target.style.width = itemX + 'px';
+    target.style.marginLeft = String(offset * (itemX + 30)) + 'px';
+
+    if (!isSquareNumber) {
+        if (middle === current) {
+            target.style.marginTop = '100px';
+        } else {
+            target.style.marginTop = '-150px';
+        }
+    }
+}
+function renderPageLinkSlider(pageLinks) {
+    const animationBindElements = App.target.querySelectorAll('[bind-animation][reference="page-slider"]');
+    const elementsCount = animationBindElements.length;
+
+    if (elementsCount) {
+        const middleIndex = Math.floor(elementsCount / 2);
+        const isSquareNumber = !(elementsCount % 2);
+        let currentLoopIndex = 0;
+
+        console.log('Animation binding started!', animationBindElements.length);
+        console.log('Animation middle index - ', middleIndex);
+        console.log('Animation square count bool - ', isSquareNumber);
+
+        do {
+            stylePageLinkItem(animationBindElements, currentLoopIndex, middleIndex, isSquareNumber);
+            currentLoopIndex++;
+        } while (currentLoopIndex < elementsCount);
+    }
+}
 
 const App = {
     target: {},
@@ -29,16 +64,16 @@ const App = {
     loadApp: (data) => {
         App.target = document.getElementById('application-wrapper');
         checkForMobileDevice(App.target);
-        const dataBindElements = App.target.querySelectorAll('[bind-data]');
 
-        ControlTabs.init(data.controlTabs);
-        EditForm.init(data.info);
+        const dataBindElements = App.target.querySelectorAll('[bind-data]');
 
         if (dataBindElements && dataBindElements.length) {
             dataBindElements.forEach((element) => {
                 Util.bindValue(element, data.info, true);
             });
         }
+
+        renderPageLinkSlider();
     },
     switchTabContent: (tab) => {
         const contentFileHTML = Util.getFile('content-tab-' + tab.id);
