@@ -1,0 +1,164 @@
+.edit-form {
+    margin-top: 25px;
+
+    .edit-form__item {
+        margin-bottom: 7px;
+        display: flex;
+        align-items: stretch;
+
+        & > .edit-form__input {
+            display: none;
+        }
+		.edit-form__item__value {
+			background-color: $input-background-color;
+		    padding: 7px;
+            padding-right: 15px;
+            font-size: 14px;
+		}
+        .icon:last-child {
+            font-size: 22px;
+            padding: 5px;
+            background-color: #ecf1f5;
+            position: relative;
+            cursor: pointer;
+        }
+        .icon:first-child {
+			background-color: $input-background-color;
+            padding: 0 5px;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+        }
+    }
+    #profile-name {
+        .edit-form__item__value {
+            font-size: 16px;
+            font-weight: 600;
+            padding: 6px 15px 5px 10px;
+        }
+    }
+    .edit-popup-wrapper {
+        position: absolute;
+        left: calc(100% - 5px);
+        top: -5px;
+        z-index: 9;
+        background-color: white;
+        padding: 20px;
+        color: $text-color;
+        margin-bottom: 40px;
+
+        &::before {
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 10px 15px 10px 0;
+            border-color: transparent #ffffff transparent transparent;
+        }
+        .edit-popup__buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+
+            & > * {
+                margin: 3px 10px;
+                padding: 7px 20px;
+                cursor: pointer;
+                font-size: 14px;
+                background-color: white;
+                color: $hover-color;
+                border-radius: 4px;
+                text-transform: uppercase;
+                font-weight: 600;
+                border: 1px solid $hover-color;
+
+                &:first-child {
+                    background-color: $hover-color;
+                    color: white;
+                }
+            }
+        }
+    }
+    .edit-form__input-placeholder {
+        font-size: 14px;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+    }
+    .edit-form__input input {
+        border: none;
+        margin: 5px 0;
+        padding: 10px;
+        border-bottom: 1px solid $text-color;
+        box-shadow: none;
+        outline: none;
+        font-size: 18px;
+        color: $text-color;
+
+        &:focus {
+            border: none !important;
+            margin: 5px 0;
+            padding: 10px;
+            border-bottom: 1px solid $text-color !important;
+            box-shadow: none !important;
+            font-size: 18px;
+            color: $text-color;
+            outline: none !important;
+        }
+    }
+}
+.content-tab-about {
+    &.toggle-all-inputs {
+        & .edit-form__item  {
+            width: 100%;
+            flex: 1 1 100%;
+            flex-wrap: wrap;
+
+            & > *:not(.edit-form__input)  {
+                display: none;
+            }
+            & > .edit-form__input {
+                display: flex;
+                flex: 1 1 100%;
+                flex-direction: column;
+
+                .edit-form__input-placeholder {
+                    font-size: 12px;
+                }
+                input {
+                    margin: 0 0 5px 0;
+                    padding: 3px 5px;
+                }
+            }
+        }
+        .toggle-all-fields {
+            display: none;
+        }
+        .edit-form__buttons {
+            display: flex;
+        }
+    }
+    .toggle-all-fields {
+        display: none;
+        font-size: 22px;
+        padding: 5px;
+        background-color: #ecf1f5;
+        cursor: pointer;
+        position: absolute;
+        top: 10px;
+        right: 30px;
+    }
+    .edit-form__buttons {
+        display: none;
+        position: absolute;
+        top: 10px;
+        right: 30px;
+        font-size: 18px;
+        padding: 5px;
+        color: $hover-color;
+
+        & > * {
+            margin: 5px;
+            padding: 0 10px;
+            cursor: pointer;
+        }
+    }
+}

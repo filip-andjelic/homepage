@@ -1,0 +1,41 @@
+<div id="edit-form" class="edit-form">
+    <div id="profile-name" class="edit-form__item">
+        <span bind-data reference="name" class="edit-form__item__value">Jessica Parker</span>
+        <div class="edit-form__input">
+            <div class="edit-form__input-placeholder">First Name</div>
+            <input type="text" bind-change bind-data reference="firstName" />
+        </div>
+        <div class="edit-form__input">
+            <div class="edit-form__input-placeholder">Last Name</div>
+            <input type="text" bind-change bind-data reference="lastName" />
+        </div>
+        <ion-icon bind-click reference="name" name="create"></ion-icon>
+    </div>
+    <div class="edit-form__item">
+        <ion-icon name="pin"></ion-icon>
+        <span bind-data reference="website" class="edit-form__item__value">www.seller.com</span>
+        <div class="edit-form__input">
+            <div class="edit-form__input-placeholder">Webiste</div>
+            <input type="text" bind-change bind-data reference="website" />
+        </div>
+        <ion-icon bind-click reference="website"  name="create"></ion-icon>
+    </div>
+    <div class="edit-form__item">
+        <ion-icon name="call"></ion-icon>
+        <span bind-data reference="phone" class="edit-form__item__value">(949)325-68594</span>
+        <div class="edit-form__input">
+            <div class="edit-form__input-placeholder">Phone number</div>
+            <input type="text" bind-change bind-data reference="phone" />
+        </div>
+        <ion-icon bind-click reference="phone"  name="create"></ion-icon>
+    </div>
+    <div class="edit-form__item">
+        <ion-icon name="home"></ion-icon>
+        <span bind-data reference="location" class="edit-form__item__value">Newport Beach, CA</span>
+        <div class="edit-form__input">
+            <div class="edit-form__input-placeholder">City, State & Zip</div>
+            <input type="text" bind-change bind-data reference="location" />
+        </div>
+        <ion-icon bind-click reference="location"  name="create"></ion-icon>
+    </div>
+</div>

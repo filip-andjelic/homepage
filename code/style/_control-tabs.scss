@@ -1,0 +1,30 @@
+.control-tabs {
+    position: absolute;
+    display: flex;
+    width: 100%;
+	bottom: -5px;
+	padding-left: calc(#{$image-size} + 40px);
+	border-top: 1px solid #e3e3e3;
+	z-index: 2;
+	box-sizing: border-box;
+	padding-bottom: 4px;
+    color: $dark-text-color;
+
+	.control-tabs__item {
+	    padding: 10px 10px 6px 10px;
+        text-transform: uppercase;
+        line-height: 28px;
+        font-size: 14px;
+        border-bottom: 3px solid transparent;
+        cursor: pointer;
+        transition: all 1s;
+
+        &:hover {
+            border-bottom: 3px solid $hover-color;
+        }
+	}
+    .control-tabs__item--selected {
+        background-color: $hover-background-color;
+        border-bottom: 3px solid $hover-color;
+    }
+}

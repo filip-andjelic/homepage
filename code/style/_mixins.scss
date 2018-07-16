@@ -1,0 +1,115 @@
+@mixin mobile-version-application {
+    margin: 0;
+    transform: scale(1);
+    width: 100%;
+    max-width: 100% !important;
+    background-color: transparent;
+
+    .controls-info-wrapper {
+        box-shadow: none;
+        background-color: $body-background-color;
+        width: 100%;
+    }
+    .content-edit-wrapper {
+        padding: 20px;
+        position: relative;
+        width: 100%;
+
+        .content-title {
+            font-size: 20px;
+            color: $text-color;
+        }
+        #edit-form {
+            margin-top: 15px;
+
+            #profile-name {
+                font-size: 14px;
+            }
+            .edit-form__item__value {
+                background-color: transparent;
+                margin-left: -10px;
+                font-size: 12px;
+            }
+            .icon:first-child {
+                background-color: transparent;
+                padding-right: 5px;
+            }
+            .icon:last-child {
+                display: none;
+            }
+        }
+        .toggle-all-fields {
+            display: block;
+        }
+    }
+    .log-out {
+        border: none;
+    }
+    .upload-image__cover {
+        display: none;
+    }
+    .info {
+        flex: 0 0 100%;
+        padding-bottom: 5px;
+
+        .info-profile-image {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            margin-bottom: 60px;
+        }
+        .image-container {
+            top: 0;
+            width: 140px;
+            height: 140px;
+            background-size: 190% 170%;
+            background-position: 75% 0;
+            box-shadow: 0 0 55px -12px #707d86;
+        }
+        .info__name {
+            position: absolute;
+            left: 50%;
+            margin-top: -40px;
+            transform: translateX(-50%);
+        }
+        .info__additional:first-of-type {
+            margin-top: 60px;
+        }
+    }
+    .rating-reviews {
+        flex: 0 0 100%;
+        justify-content: flex-start;
+        padding-top: 0;
+        margin-bottom: 100px;
+        flex-wrap: wrap;
+        align-items: center;
+
+        .rating-reviews__stars {
+            color: $hover-color;
+            flex: 1 1 100%;
+            margin-bottom: 5px;;
+        }
+        .rating-reviews__count {
+            font-weight: 600;
+        }
+        .rating-reviews__stars, .rating-reviews__count {
+            margin-top: 0;
+            margin-left: 20px;
+        }
+    }
+    .followers {
+        left: 0;
+        bottom: 50px;
+        padding: 0 10px 20px;
+
+        .icon {
+            margin-right: 0;
+        }
+    }
+    #control-tabs {
+        padding: 0 10px;
+        background-color: white;
+        box-shadow: 0 0 55px -12px #707d86;
+    }
+}

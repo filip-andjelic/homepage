@@ -1,0 +1,22 @@
+.rating-reviews {
+	flex: 0 0 40%;
+    justify-content: flex-end;
+    justify-items: flex-end;
+    padding: 10px 0;
+	box-sizing: border-box;
+    color: $text-color;
+
+    .rating-reviews__stars {
+        margin: 10px 30px;
+
+        .icon {
+            font-size: 24px;
+        }
+    }
+    .rating-reviews__count {
+        margin: 15px 20px 0 0;
+    }
+    #rating-reviews__count {
+        margin: 0 5px;
+    }
+}
