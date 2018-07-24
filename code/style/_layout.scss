@@ -127,12 +127,14 @@ body {
 }
 
 .rotation-item {
-    height: 150px;
+    display: inline-block;
+    height: 250px;
     width: 250px;
-    background-color: red;
-    border-radius: 4px;
+    border-radius: 50%;
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translateY(-50%) translateX(-50%);
+    background-position: -3px -3px;
+    background-size: 103% 103%;
 }
