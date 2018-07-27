@@ -7,6 +7,7 @@ body {
     height: 100vh;
     background-color: $body-background-color;
     font-family: $font;
+    cursor: url('/assets/images/pointer-1.svg'), auto;
 }
 
 #App {
@@ -133,6 +134,7 @@ body {
     top: calc(50% - 125px);
     //transform: translateY(-50%) translateX(-50%);
     overflow: hidden;
+    cursor: url('/assets/images/pointer-1.svg'), auto;
 
     &.main-loader {
         border-radius: 50%;
@@ -140,6 +142,16 @@ body {
         animation-iteration-count: infinite;
         animation-timing-function: linear;
         animation-duration: 7.5s;
+        animation-fill-mode: forwards;
+        box-shadow: 0 0 225px -25px red;
+        transition: box-shadow .7s, transform .5s;
+        transform-origin: center center;
+    }
+
+    &:hover {
+        animation-play-state: paused;
+        transform: scale(1.2);
+        box-shadow: 0 0 125px 5px black;
     }
     .cover-loader {
         position: absolute;
