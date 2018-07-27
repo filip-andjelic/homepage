@@ -61,6 +61,10 @@ body {
     flex-direction: column;
 }
 
+.circle-rounded {
+    border-radius: 50%;
+}
+
 .padding-15 {
     padding: 15px;
 }
@@ -126,32 +130,39 @@ body {
     min-width: 100%;
     box-sizing: border-box;
 }
+
 .loader-wrapper {
-    height: 250px;
-    width: 250px;
     position: absolute;
-    left: calc(50% - 125px);
-    top: calc(50% - 125px);
-    //transform: translateY(-50%) translateX(-50%);
-    overflow: hidden;
-    cursor: url('/assets/images/pointer-1.svg'), auto;
+    background-color: transparent;
+    z-index: 9998;
 
     &.main-loader {
-        border-radius: 50%;
+        height: $main-loader-size;
+        width: $main-loader-size;
+        padding: 30px;
+        box-sizing: border-box;
+        left: calc(50% - #{$main-loader-size} / 2);
+        top: calc(50% - #{$main-loader-size} / 2);
         animation-name: spinAroundCenter;
         animation-iteration-count: infinite;
         animation-timing-function: linear;
         animation-duration: 7.5s;
         animation-fill-mode: forwards;
-        box-shadow: 0 0 225px -25px red;
-        transition: box-shadow .7s, transform .5s;
-        transform-origin: center center;
+
+        & > div {
+            box-shadow: 0 0 225px -25px red;
+            transition: box-shadow .7s;
+            transform-origin: center center;
+            position: relative;
+
+            &:hover {
+                box-shadow: 0 0 125px 5px black;
+            }
+        }
     }
 
     &:hover {
         animation-play-state: paused;
-        transform: scale(1.2);
-        box-shadow: 0 0 125px 5px black;
     }
     .cover-loader {
         position: absolute;
@@ -160,6 +171,48 @@ body {
         background-color: #9d070740;
     }
 }
+
+.menu-wrapper {
+    &.circle-tabs {
+        display: flex;
+        position: absolute;
+        background-color: transparent;
+        z-index: 9997;
+        height: calc(#{$main-loader-size} + 140px);
+        width: calc(#{$main-loader-size} + 140px);
+        left: calc(50% - (#{$main-loader-size} + 140px) / 2);
+        top: calc(50% - (#{$main-loader-size} + 140px) / 2);
+        animation-name: spinAroundCenter;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        animation-duration: 4s;
+        animation-fill-mode: forwards;
+
+        .circle-tab {
+            position: absolute;
+            padding: 30px 20px;
+            width: auto;
+            text-align: center;
+            background-color: white;
+        }
+        .tab-1 {
+            top: 30px;
+            left: 310px;
+            transform: rotate(47deg);
+        }
+        .tab-2 {
+            top: 120px;
+            left: 360px;
+            transform: rotate(80deg);
+        }
+        .tab-3 {
+            top: 240px;
+            left: 350px;
+            transform: rotate(115deg);
+        }
+    }
+}
+
 .rotation-item {
     width: 100%;
     height: 100%;
