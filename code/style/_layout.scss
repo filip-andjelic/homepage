@@ -98,6 +98,7 @@ body {
 
 .application-live-background {
     position: relative;
+    transform: skew(-3deg, -10deg);
 }
 
 .controls-info-wrapper {
@@ -178,37 +179,70 @@ body {
         position: absolute;
         background-color: transparent;
         z-index: 9997;
-        height: calc(#{$main-loader-size} + 140px);
-        width: calc(#{$main-loader-size} + 140px);
-        left: calc(50% - (#{$main-loader-size} + 140px) / 2);
-        top: calc(50% - (#{$main-loader-size} + 140px) / 2);
+        border-radius: 50%;
+        overflow: hidden;
+        height: calc(#{$main-loader-size} + 100px);
+        width: calc(#{$main-loader-size} + 100px);
+        left: calc(50% - (#{$main-loader-size} + 100px) / 2);
+        top: calc(50% - (#{$main-loader-size} + 100px) / 2);
         animation-name: spinAroundCenter;
         animation-iteration-count: infinite;
         animation-timing-function: linear;
-        animation-duration: 4s;
+        animation-duration: 30s;
         animation-fill-mode: forwards;
 
+        .circle-cover {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 11;
+            background-color: black;
+            border-radius: 50%;
+            height: calc(#{$main-loader-size} - 15px);
+            width: calc(#{$main-loader-size} - 15px);
+        }
         .circle-tab {
             position: absolute;
-            padding: 30px 20px;
             width: auto;
             text-align: center;
-            background-color: white;
+            padding: 60px 20px 70px 20px;
+            background-color: black;
+            max-width: 200px;
+            box-sizing: border-box;
+            z-index: 10;
+            color: #e6e6e6;
+            border-radius: 40%;
+
+            .tab-title {
+                position: relative;
+                top: 5px;
+                font-size: 18px;
+                font-weight: 900;
+            }
         }
         .tab-1 {
-            top: 30px;
-            left: 310px;
+            left: 245px;
+            top: 000px;
             transform: rotate(47deg);
         }
         .tab-2 {
-            top: 120px;
-            left: 360px;
-            transform: rotate(80deg);
+            top: 249px;
+            left: 180px;
+            transform: rotate(148deg);
+
+            .tab-title {
+                top: -5px;
+            }
         }
         .tab-3 {
-            top: 240px;
-            left: 350px;
-            transform: rotate(115deg);
+            top: 173px;
+            left: -42px;
+            transform: rotate(252deg);
+
+            .tab-title {
+                top: -3px;
+            }
         }
     }
 }
